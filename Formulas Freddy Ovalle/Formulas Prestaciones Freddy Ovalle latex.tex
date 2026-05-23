@@ -1,0 +1,105 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\begin{flushleft}
+\textbf{Arquitectura del Computador} \hfill \textbf{Freddy Ovalle} \\
+\textbf{Prof. José Canache} \hfill \textbf{C.I: 31.709.650} \\
+\textbf{Sección 01}
+\end{flushleft}
+
+\vspace{1cm}
+
+\begin{center}
+\Large{\textbf{Fórmulas de Cálculo de Prestaciones}}
+\end{center}
+
+\vspace{0.5cm}
+
+\section*{Prestaciones relativas}
+
+\begin{itemize}
+    \item \textbf{Definición de Prestaciones:} 
+    $$Prestaciones = \frac{1}{\text{Tiempo de Ejecución}}$$
+
+    \item \textbf{Rendimiento Relativo:} 
+    $$n = \frac{Prestaciones_X}{Prestaciones_Y} = \frac{Tiempo_Y}{Tiempo_X}$$
+\end{itemize}
+
+\section*{Ecuación Clásica de la CPU}
+
+\begin{itemize}
+    \item \textbf{Tiempo de CPU (Ciclos):} 
+    $$\text{Tiempo de CPU} = \text{Ciclos de Reloj de la CPU} \times \text{Tiempo de Ciclo de Reloj}$$
+
+    \item \textbf{Tiempo de CPU (Frecuencia):} 
+    $$\text{Tiempo de CPU} = \frac{\text{Ciclos de Reloj de la CPU}}{\text{Frecuencia de Reloj}}$$
+
+    \item \textbf{Ciclos de Reloj Totales:} 
+    $$\text{Ciclos de Reloj de la CPU} = \text{Número de Instrucciones} \times CPI$$
+
+    \item \textbf{Ecuación Completa (Tiempo):} 
+    $$\text{Tiempo de CPU} = \text{Número de Instrucciones} \times CPI \times \text{Tiempo de Ciclo}$$
+
+    \item \textbf{Ecuación Completa (Frecuencia):} 
+    $$\text{Tiempo de CPU} = \frac{\text{Número de Instrucciones} \times CPI}{\text{Frecuencia de Reloj}}$$
+
+    \item \textbf{Ciclos de CPU por Mezcla de Instrucciones:} 
+    $$\text{Ciclos de CPU} = \sum (CPI_i \times C_i)$$
+
+    \item \textbf{CPI Medio:} 
+    $$CPI = \frac{\text{Ciclos de Reloj de la CPU}}{\text{Número de Instrucciones}}$$
+\end{itemize}
+
+\section*{Segmentación (Pipelining)}
+
+\begin{itemize}
+    \item \textbf{Tiempo Ideal entre Instrucciones:} 
+    $$\text{Tiempo entre Instrucciones (Seg)} = \frac{\text{Tiempo entre Instrucciones (No Seg)}}{\text{Número de Etapas}}$$
+\end{itemize}
+
+\section*{Ley de Amdahl}
+
+\begin{itemize}
+    \item \textbf{Tiempo de Ejecución Mejorado:} 
+    $$\text{Tiempo Post-Mejora} = \left(\frac{\text{Tiempo Afectado}}{\text{Factor de Mejora}}\right) + \text{Tiempo No Afectado}$$
+\end{itemize}
+
+\section*{Memoria y Caches}
+
+\begin{itemize}
+    \item \textbf{Ciclos Parada de Memoria (Accesos):} 
+    $$\text{Ciclos Parada} = \left(\frac{\text{Accesos a Memoria}}{\text{Programa}}\right) \times \text{Frecuencia Fallos} \times \text{Penalización Fallo}$$
+
+    \item \textbf{Ciclos Parada de Memoria (Instrucciones):} 
+    $$\text{Ciclos Parada} = \left(\frac{\text{Instrucciones}}{\text{Programa}}\right) \times \left(\frac{\text{Fallos}}{\text{Instrucción}}\right) \times \text{Penalización Fallo}$$
+
+    \item \textbf{Ciclos Parada por Lectura:} 
+    $$\text{Ciclos Parada Lectura} = \left(\frac{\text{Lecturas}}{\text{Programa}}\right) \times \text{Frecuencia Fallos Lectura} \times \text{Penalización Lectura}$$
+
+    \item \textbf{Ciclos Parada por Escritura:} 
+    $$\text{Ciclos Parada Escritura} = \left(\left(\frac{\text{Escrituras}}{\text{Programa}}\right) \times \text{Frecuencia Fallos Escritura} \times \text{Penalización}\right) + \text{Parada Búfer}$$
+    
+    \item \textbf{Tiempo Medio de Acceso a Memoria (AMAT):}
+    $$AMAT = \text{Tiempo Acierto} + (\text{Frecuencia Fallos} \times \text{Penalización Fallo})$$
+\end{itemize}
+
+\section*{Métricas Alternativas}
+
+\begin{itemize}
+    \item \textbf{MIPS (Tiempo de Ejecución):}
+    $$MIPS = \frac{\text{Número de Instrucciones}}{\text{Tiempo de Ejecución} \times 10^6}$$
+    
+    \item \textbf{MIPS (Reloj y CPI):}
+    $$MIPS = \frac{\text{Frecuencia de Reloj}}{CPI \times 10^6}$$
+\end{itemize}
+
+\end{document}
